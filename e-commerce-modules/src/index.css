@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+  :root {
+    --primary: oklch(44.14% 0.0898 245.13);
+  }
+}
+
+.dark {
+  --primary: oklch(0.8148 0.2095 156.77);
+}
