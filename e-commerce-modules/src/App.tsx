@@ -1,4 +1,5 @@
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ThemeProvider } from 'next-themes'
 import useRouteElements from './useRouteElements'
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
 
   return (
     <>
-      <>{routeElements}</>
+      <ThemeProvider attribute={'class'} defaultTheme='dark'>
+        {routeElements}
+      </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </>
   )

@@ -16,11 +16,13 @@
 @theme {
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --color-primary: oklch(44.14% 0.0898 245.13);
+  --color-primary-lighter: oklch(0.6233 0.0715 241.48);
 }
 
 /* Dark mode override */
 .dark {
-  --color-primary: oklch(0.8148 0.2095 156.77);
+  -color-primary: oklch(0.8148 0.2095 156.77);
+  --color-primary-lighter: oklch(0.8802 0.2095 156.77);
 }
 
 /* Animation keyframes */
@@ -63,6 +65,9 @@
   /* Dùng cho utility class nhỏ, tái sử dụng nhiều, ví dụ .text-balance, .scrollbar-hide, .grid-cols-sidebar…
   Các class ở đây thường ít style, một nhiệm vụ duy nhất.
   Nằm cùng layer với các class bg-*, p-*, text-* của Tailwind. */
+  .button {
+    @apply bg-primary hover:bg-primary-lighter w-full px-2 py-4 text-center text-sm text-white uppercase;
+  }
 }
 
 @layer components {
