@@ -61,3 +61,5 @@ export const LoginZodSchema = RegisterZodSchema.omit({ confirm_password: true })
 
 export type LoginYupSchemaType = yup.InferType<typeof LoginYupSchema>
 export type LoginZodSchemaType = z.infer<typeof LoginZodSchema>
+export type RegisterYupSchemaType = yup.InferType<typeof RegisterYupSchema>
+export type RegisterZodSchemaType = z.infer<typeof RegisterZodSchema>
