@@ -1,14 +1,27 @@
 /* eslint-disable no-constant-condition */
+import authApi from '@/apis/auth.api'
 import path from '@/constants/path'
 import { AppContext } from '@/contexts/app.context'
 import * as Popover from '@radix-ui/react-popover'
+import { useMutation } from '@tanstack/react-query'
 import { useTheme } from 'next-themes'
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function NavHeader() {
   const { setTheme } = useTheme()
-  const { isAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, profile, reset } = useContext(AppContext)
+  const navigate = useNavigate()
+
+  const logoutMutation = useMutation({
+    mutationFn: authApi.logoutAccount
+  })
+
+  const handleLogout = async () => {
+    await logoutMutation.mutateAsync()
+    reset()
+    navigate('/')
+  }
 
   return (
     <div className='inset-shadow-[0_0_1rem_0] inset-shadow-gray-200'>
@@ -83,8 +96,8 @@ export default function NavHeader() {
             <Popover.Trigger>
               <div className='flex cursor-pointer'>
                 <div>
-                  {true ? (
-                    <img src='{profile?.avatar} ' className='size-5' alt='' />
+                  {profile ? (
+                    <img src={profile?.avatar} className='size-5' alt='' />
                   ) : (
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -102,7 +115,7 @@ export default function NavHeader() {
                     </svg>
                   )}
                 </div>
-                <span className='mx-1'>Shang</span>
+                <span className='mx-1'>{profile?.name || profile?.email}</span>
                 <div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -132,7 +145,10 @@ export default function NavHeader() {
                 >
                   Đơn mua
                 </Link>
-                <button className='cursor-pointer px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'>
+                <button
+                  onClick={handleLogout}
+                  className='cursor-pointer px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'
+                >
                   Đăng xuất
                 </button>
               </div>
