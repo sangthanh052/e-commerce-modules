@@ -17,6 +17,25 @@
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --color-primary: oklch(44.14% 0.0898 245.13);
   --color-primary-lighter: oklch(0.6233 0.0715 241.48);
+
+  --color-red-52c52: #e52c25;
+  --color-teal-117766: #117766;
+  --color-sky-3b5998: #3b5998;
+  --color-neutral-d0d0d0: #d0d0d0;
+  --color-gray-26: rgba(0, 0, 0, 0.26);
+  --color-gray-f2: #f2f2f2;
+  --color-gray-f9: #f9f9f9;
+  --color-gray-555: #555;
+  --color-gray-ccc: #ccc;
+
+  --fill-sky-3b5998: #3b5998;
+  --fill-amber-7b472c: #7b472c;
+
+  --text-normal: 0.8125rem;
+  --shadow-input: 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.2);
+  --shadow-flag: rgb(238, 77, 45) 0px 0px 0px 0.5px;
+  --shadow-spread: 0 0 0 2px #fff, 0 0 0 4px #000;
+  --shadow-top: 0 -2px 10px 0px rgba(0, 0, 0, 0.04);
 }
 
 /* Dark mode override */

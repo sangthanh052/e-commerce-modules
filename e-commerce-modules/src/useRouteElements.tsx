@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout/MainLayout'
 
 const Register = lazy(() => import('./pages/Register'))
 const Login = lazy(() => import('./pages/Login'))
+const ProductDetail = lazy(() => import('./pages/ProductDetail'))
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -25,6 +26,14 @@ export default function useRouteElements() {
           element: (
             <Suspense>
               <Login />
+            </Suspense>
+          )
+        },
+        {
+          path: path.productDetail,
+          element: (
+            <Suspense>
+              <ProductDetail />
             </Suspense>
           )
         }
