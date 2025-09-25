@@ -99,4 +99,14 @@
     transform-origin: var(--radix-popover-content-transform-origin);
     animation: scaleOut 0.2s ease-in forwards;
   }
+
+  .hoverCardContent[data-state='open'] {
+    transform-origin: var(--radix-hover-card-content-transform-origin);
+    animation: scaleIn 0.25s ease-out;
+  }
+
+  .hoverCardContent[data-state='closed'] {
+    transform-origin: var(--radix-hover-card-content-transform-origin);
+    animation: scaleOut 0.2s ease-in forwards;
+  }
 }

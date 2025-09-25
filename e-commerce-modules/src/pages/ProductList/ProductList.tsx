@@ -80,7 +80,7 @@ export default function ProductList() {
     <div className='py-6 text-sm'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-12 gap-8'>
-          <div className='col-span-2'>{/* AsideFilter */}</div>
+          <div className='col-span-2'>{/* <AsideFilter /> */}</div>
           <div className='col-span-10'>
             <WindowScroller>
               {({ height, isScrolling, onChildScroll, scrollTop }) => (
