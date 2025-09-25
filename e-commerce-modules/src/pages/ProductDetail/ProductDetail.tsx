@@ -7,18 +7,20 @@ import purchaseApi from '@/apis/purchase.api'
 import QuantityController from '@/components/QuantityController'
 import Dialog from '@/components/ui/dialog'
 import { purchaseStatus } from '@/constants/purchase'
-import { formatCurrency, rateSale } from '@/utils/utils'
+import { formatCurrency, getIdFromNameId, rateSale } from '@/utils/utils'
 import { useState } from 'react'
 
 export default function ProductDetail() {
   const { nameId } = useParams()
+  const id = getIdFromNameId(nameId as string)
+
   const [byCount, setByCount] = useState(1)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const queryClient = useQueryClient()
 
   const { data: productDetailData } = useQuery({
-    queryKey: ['product', nameId],
-    queryFn: () => productApi.getProductDetails(nameId as string)
+    queryKey: ['product', id],
+    queryFn: () => productApi.getProductDetails(id as string)
   })
 
   const addToCartMutation = useMutation({
