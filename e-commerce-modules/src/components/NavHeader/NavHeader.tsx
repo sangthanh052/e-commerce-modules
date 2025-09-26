@@ -1,17 +1,23 @@
 /* eslint-disable no-constant-condition */
-import authApi from '@/apis/auth.api'
-import path from '@/constants/path'
-import { AppContext } from '@/contexts/app.context'
 import * as Popover from '@radix-ui/react-popover'
 import { useMutation } from '@tanstack/react-query'
 import { useTheme } from 'next-themes'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
+import authApi from '@/apis/auth.api'
+import path from '@/constants/path'
+import { AppContext } from '@/contexts/app.context'
+import { locales } from '@/i18n/i18n'
+
 export default function NavHeader() {
+  const { i18n } = useTranslation()
   const { setTheme } = useTheme()
   const { isAuthenticated, profile, reset } = useContext(AppContext)
   const navigate = useNavigate()
+
+  const currentLanguage = locales[i18n.language as keyof typeof locales]
 
   const logoutMutation = useMutation({
     mutationFn: authApi.logoutAccount
@@ -21,6 +27,10 @@ export default function NavHeader() {
     await logoutMutation.mutateAsync()
     reset()
     navigate('/')
+  }
+
+  const changeLanguage = (lng: 'en' | 'vi') => {
+    i18n.changeLanguage(lng)
   }
 
   return (
@@ -66,7 +76,7 @@ export default function NavHeader() {
                   />
                 </svg>
               </div>
-              <span className='mx-1'>Tieng Viet</span>
+              <span className='mx-1'>{currentLanguage}</span>
               <div>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -81,10 +91,20 @@ export default function NavHeader() {
               </div>
             </div>
           </Popover.Trigger>
-          <Popover.Content className='popoverContent origin-top' align='center' sideOffset={5}>
+          <Popover.Content className='popoverContent origin-top z-10' align='center' sideOffset={5}>
             <div className='text-normal relative flex flex-col bg-white shadow-md'>
-              <button className='px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'>Tieng Viet</button>
-              <button className='px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'>Tieng Anh</button>
+              <button
+                className='px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'
+                onClick={() => changeLanguage('vi')}
+              >
+                Tieng Viet
+              </button>
+              <button
+                className='px-6 py-2 opacity-80 hover:bg-gray-50 hover:text-teal-500'
+                onClick={() => changeLanguage('en')}
+              >
+                Tieng Anh
+              </button>
             </div>
             <Popover.Arrow className='fill-black' width={21} height={10} />
           </Popover.Content>

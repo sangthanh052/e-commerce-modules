@@ -10,10 +10,12 @@ import path from '@/constants/path'
 import { purchaseStatus } from '@/constants/purchase'
 import { formatCurrency, getIdFromNameId, rateSale } from '@/utils/utils'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function ProductDetail() {
   const { nameId } = useParams()
   const id = getIdFromNameId(nameId as string)
+  const { t } = useTranslation(['product'])
 
   const [byCount, setByCount] = useState(1)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
@@ -184,7 +186,7 @@ export default function ProductDetail() {
                   onDecrease={handleByCount}
                   onType={handleByCount}
                 />
-                <div className='text-gray-555 uppercase'>{product.quantity} product:available</div>
+                <div className='text-gray-555 uppercase'>{product.quantity} {t('product:available')}</div>
               </div>
 
               <div className='mt-7.5 inline-flex items-center gap-3'>
