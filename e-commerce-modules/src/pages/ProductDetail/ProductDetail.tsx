@@ -1,11 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import productApi from '@/apis/product.api'
 import purchaseApi from '@/apis/purchase.api'
 import QuantityController from '@/components/QuantityController'
 import Dialog from '@/components/ui/dialog'
+import path from '@/constants/path'
 import { purchaseStatus } from '@/constants/purchase'
 import { formatCurrency, getIdFromNameId, rateSale } from '@/utils/utils'
 import { useState } from 'react'
@@ -17,6 +18,7 @@ export default function ProductDetail() {
   const [byCount, setByCount] = useState(1)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const queryClient = useQueryClient()
+  const navigate = useNavigate()
 
   const { data: productDetailData } = useQuery({
     queryKey: ['product', id],
@@ -44,6 +46,20 @@ export default function ProductDetail() {
         }
       }
     )
+  }
+
+  const byNow = async () => {
+    const res = await addToCartMutation.mutateAsync({
+      buy_count: byCount,
+      product_id: product?._id as string
+    })
+    const purchase = res.data.data
+
+    navigate(path.cart, {
+      state: {
+        purchaseId: purchase._id
+      }
+    })
   }
 
   const product = productDetailData?.data.data
@@ -175,7 +191,7 @@ export default function ProductDetail() {
                 <button className='button' onClick={addToCart}>
                   Thêm vào giỏ hàng
                 </button>
-                <button className='border border-black bg-white text-black px-2 py-4 text-nowrap'>Mua ngay</button>
+                <button className='border border-black bg-white text-black px-2 py-4 text-nowrap' onClick={byNow}>Mua ngay</button>
               </div>
             </section>
           </section>

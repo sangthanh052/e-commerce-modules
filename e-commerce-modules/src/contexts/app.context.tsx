@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import type { ExtendedPurchasesType } from '@/types/purchase.type'
 import type { User } from '@/types/user.type'
 import { getAccessTokenFromLS, getprofileFromLS } from '@/utils/auths'
 import React, { createContext, useState } from 'react'
@@ -9,6 +10,8 @@ interface AppContextInterface {
   profile: User | null
   setProfile: React.Dispatch<React.SetStateAction<User | null>>
   reset: () => void
+  extendedPurchases: ExtendedPurchasesType[]
+  setExtendedPurchases: React.Dispatch<React.SetStateAction<ExtendedPurchasesType[]>>
 }
 
 const initialAppContext = {
@@ -16,7 +19,9 @@ const initialAppContext = {
   setIsAuthenticated: () => null,
   profile: getprofileFromLS(),
   setProfile: () => null,
-  reset: () => null
+  reset: () => null,
+  extendedPurchases: [],
+  setExtendedPurchases: () => null
 }
 
 export const AppContext = createContext<AppContextInterface>(initialAppContext)
@@ -30,14 +35,26 @@ export const AppProvider = ({
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(defaultValue.isAuthenticated)
   const [profile, setProfile] = useState(defaultValue.profile)
+  const [extendedPurchases, setExtendedPurchases] = useState<ExtendedPurchasesType[]>(defaultValue.extendedPurchases)
 
   const reset = () => {
     setIsAuthenticated(false)
     setProfile(null)
+    setExtendedPurchases([])
   }
 
   return (
-    <AppContext.Provider value={{ isAuthenticated, setIsAuthenticated, profile, setProfile, reset }}>
+    <AppContext.Provider
+      value={{
+        isAuthenticated,
+        setIsAuthenticated,
+        profile,
+        setProfile,
+        reset,
+        extendedPurchases,
+        setExtendedPurchases
+      }}
+    >
       {children}
     </AppContext.Provider>
   )

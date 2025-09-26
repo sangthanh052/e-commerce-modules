@@ -62,9 +62,10 @@ export default function QuantityController(props: PropsType) {
   return (
     <div className='flex items-center'>
       <button
-        className='border-gray-ccc grid size-8 cursor-pointer place-items-center border'
+        className='border-gray-ccc grid size-8 cursor-pointer place-items-center border disabled:bg-gray-300'
         aria-label='minus'
         onClick={decrease}
+        disabled={rest.disabled}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -88,9 +89,10 @@ export default function QuantityController(props: PropsType) {
         {...rest}
       />
       <button
-        className='border-gray-ccc grid size-8 cursor-pointer place-items-center border'
+        className='border-gray-ccc grid size-8 cursor-pointer place-items-center border disabled:bg-gray-300'
         aria-label='plus'
         onClick={increase}
+        disabled={rest.disabled}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
