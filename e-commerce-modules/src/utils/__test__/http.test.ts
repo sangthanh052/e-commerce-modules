@@ -155,6 +155,7 @@ describe('Http class', () => {
 
     ;(http as any).instance.post = postMock
 
+    // Check bằng spy. Theo dõi xem hàm có được gọi không.
     const clearSpy = vi.spyOn(http as any, 'clearAuth')
 
     //http as any ép kiểu sẽ gọi được private
