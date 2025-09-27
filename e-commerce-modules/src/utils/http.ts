@@ -15,7 +15,7 @@ import {
 } from './auths'
 import { isAxiosExpiredTokenError, isAxiosUnauthorizedError } from './utils'
 
-class Http {
+export class Http {
   instance: AxiosInstance
   private accessToken: string
   private refreshToken: string
