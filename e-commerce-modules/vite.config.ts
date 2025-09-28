@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   test: {
     environment: 'jsdom',
-    globals: true  // Vitest sẽ tự thêm describe, it/test, expect vào global scope (giống Jest).
+    globals: true, // Vitest sẽ tự thêm describe, it/test, expect vào global scope (giống Jest).
+    setupFiles: path.resolve(__dirname, './vitest.setup.js')
   },
   server: {
     port: 3000
