@@ -14,7 +14,7 @@ interface AppContextInterface {
   setExtendedPurchases: React.Dispatch<React.SetStateAction<ExtendedPurchasesType[]>>
 }
 
-const initialAppContext = {
+export const getInitialAppContext: () => AppContextInterface = () => ({
   isAuthenticated: Boolean(getAccessTokenFromLS()),
   setIsAuthenticated: () => null,
   profile: getprofileFromLS(),
@@ -22,7 +22,9 @@ const initialAppContext = {
   reset: () => null,
   extendedPurchases: [],
   setExtendedPurchases: () => null
-}
+})
+
+const initialAppContext = getInitialAppContext()
 
 export const AppContext = createContext<AppContextInterface>(initialAppContext)
 

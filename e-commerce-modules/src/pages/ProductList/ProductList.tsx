@@ -78,6 +78,8 @@ export default function ProductList() {
 
   return (
     <div className='py-6 text-sm'>
+      <title>Vite + React + TS</title>
+
       <div className='container mx-auto'>
         <div className='grid grid-cols-12 gap-8'>
           <div className='col-span-2'>{/* <AsideFilter /> */}</div>

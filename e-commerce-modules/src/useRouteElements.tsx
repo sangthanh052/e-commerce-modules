@@ -4,6 +4,7 @@ import { Navigate, Outlet, useRoutes } from 'react-router-dom'
 import path from './constants/path'
 import { AppContext } from './contexts/app.context'
 import MainLayout from './layouts/MainLayout/MainLayout'
+import NotFound from './pages/NotFound'
 
 const Register = lazy(() => import('./pages/Register'))
 const Login = lazy(() => import('./pages/Login'))
@@ -81,6 +82,10 @@ export default function useRouteElements() {
           ]
         }
       ]
+    },
+    {
+      path: '*',
+      element: <NotFound />
     }
   ])
   return routeElements

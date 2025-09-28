@@ -7,7 +7,8 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   test: {
-    environment: 'jsdom'
+    environment: 'jsdom',
+    globals: true  // Vitest sẽ tự thêm describe, it/test, expect vào global scope (giống Jest).
   },
   server: {
     port: 3000
