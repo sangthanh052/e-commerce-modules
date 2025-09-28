@@ -1,0 +1,259 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductDetail > Render UI ProductDetail 1`] = `
+<body>
+  <div>
+    <script
+      nonce=""
+    >
+      ((e,i,s,u,m,a,l,h)=&gt;{let d=document.documentElement,w=["light","dark"];function p(n){(Array.isArray(e)?e:[e]).forEach(y=&gt;{let k=y==="class",S=k&&a?m.map(f=&gt;a[f]||f):m;k?(d.classList.remove(...S),d.classList.add(a&&a[n]?a[n]:n)):d.setAttribute(y,n)}),R(n)}function R(n){h&&w.includes(n)&&(d.style.colorScheme=n)}function c(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}if(u)p(u);else try{let n=localStorage.getItem(i)||s,y=l&&n==="system"?c():n;p(y)}catch(n){}})("class","theme","light",null,["light","dark"],null,true,true)
+    </script>
+    <div>
+      <main>
+        <div />
+        <div
+          class="pb-5 text-sm"
+        >
+          <div
+            class="container mx-auto"
+          >
+            <section
+              class="grid lg:grid-cols-12"
+            >
+              <section
+                class="lg:col-span-5 lg:p-3.5"
+              >
+                <div
+                  class="product-image relative w-full pt-[100%] shadow"
+                >
+                  <img
+                    alt="Điện Thoại Vsmart Active 3 6GB/64GB - Hàng Chính Hãng"
+                    class="absolute inset-0 object-cover"
+                    src="https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg"
+                    style="opacity: 1;"
+                  />
+                </div>
+                <div
+                  class="slider relative mt-3 mb-1.5 grid grid-flow-col place-items-center gap-1.5 hidden"
+                >
+                  <div
+                    class="w-full"
+                  >
+                    <div
+                      class="relative w-full pb-[100%]"
+                    >
+                      <img
+                        alt="image"
+                        class="absolute inset-0"
+                        src="https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg"
+                      />
+                      <div
+                        class="border-red-52c52 absolute inset-0 w-full border-2"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/20 text-white"
+                  >
+                    <svg
+                      class="h-8 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/20 text-white"
+                  >
+                    <svg
+                      class="h-8 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </section>
+              <section
+                class="lg:col-span-7 lg:p-5"
+              >
+                <h1
+                  class="text-xl"
+                >
+                  Điện Thoại Vsmart Active 3 6GB/64GB - Hàng Chính Hãng
+                </h1>
+                <div
+                  class="group-price bg-gray-f9 flex items-center gap-2.5 px-5 py-4"
+                >
+                  <span
+                    class="text-red-52c52 text-3xl first-letter:align-top first-letter:text-[26px]"
+                  >
+                    ₫3.190.000
+                  </span>
+                  <svg
+                    fill="none"
+                    height="21"
+                    viewBox="0 0 20 21"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.583 17.167c-2.533 0-4.585-2.067-4.585-4.616 0-2.55 2.052-4.616 4.585-4.616S19.167 10 19.167 12.55s-2.052 4.616-4.585 4.616m1.774-6.365a.5.5 0 0 1 .729-.017.51.51 0 0 1 .017.699l-2.633 2.923-.028.04a.513.513 0 0 1-.76.06l-1.402-1.33a.51.51 0 0 1-.01-.732.504.504 0 0 1 .701-.013l1.043.97z"
+                      fill="#EE4D2D"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      d="M9.745 16.143H2.362a1.534 1.534 0 0 1-1.528-1.539v-3.462h.764a1.15 1.15 0 0 0 1.146-1.154 1.15 1.15 0 0 0-1.146-1.154H.834V5.372c0-.85.684-1.538 1.528-1.538h12.226c.844 0 1.529.688 1.529 1.538v1.325a6 6 0 0 0-1.147-.186V5.372a.383.383 0 0 0-.382-.384H6.443v1.718H5.425V4.988H2.362a.383.383 0 0 0-.382.384v2.34a2.304 2.304 0 0 1 1.91 2.276 2.304 2.304 0 0 1-1.91 2.277v2.34c0 .212.171.384.382.384h3.063v-1.512h1.018v1.512H9.08q.271.617.666 1.154"
+                      fill="#EE4D2D"
+                    />
+                    <path
+                      d="M5.425 9.579V7.732h1.018V9.58zm0 2.872v-1.847h1.018v1.847z"
+                      fill="#EE4D2D"
+                    />
+                  </svg>
+                  <span
+                    class="text-gray-555/70 text-base line-through first-letter:align-top first-letter:text-sm"
+                  >
+                    ₫3.990.000
+                  </span>
+                  <span
+                    class="text-normal bg-red-52c52 p-1 font-bold text-white uppercase"
+                  >
+                    20%
+                     Giảm
+                  </span>
+                </div>
+                <button
+                  class="my-4 flex cursor-pointer items-center"
+                >
+                  Bảng quy đổi kích cỡ
+                  <svg
+                    class="size-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="group-quantity mt-4 flex items-center gap-3.5"
+                >
+                  <h2
+                    class="w-[100px]"
+                  >
+                    Số lượng
+                  </h2>
+                  <div
+                    class="flex items-center"
+                  >
+                    <button
+                      aria-label="minus"
+                      class="border-gray-ccc grid size-8 cursor-pointer place-items-center border disabled:bg-gray-300"
+                    >
+                      <svg
+                        class="size-2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5 12h14"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="z-10"
+                    >
+                      <input
+                        aria-live="assertive"
+                        class=" border-gray-ccc text-red-52c52 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 grid h-8 w-12.5 outline-none cursor-text place-items-center border-y"
+                        type="text"
+                        value="1"
+                      />
+                    </div>
+                    <button
+                      aria-label="plus"
+                      class="border-gray-ccc grid size-8 cursor-pointer place-items-center border disabled:bg-gray-300"
+                    >
+                      <svg
+                        class="size-2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 4.5v15m7.5-7.5h-15"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    class="text-gray-555 uppercase"
+                  >
+                    138
+                     
+                    Sản phẩm có sẵn
+                  </div>
+                </div>
+                <div
+                  class="mt-7.5 inline-flex items-center gap-3"
+                >
+                  <button
+                    class="button"
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
+                  <button
+                    class="border border-black bg-white text-black px-2 py-4 text-nowrap"
+                  >
+                    Mua ngay
+                  </button>
+                </div>
+              </section>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <section
+      aria-atomic="false"
+      aria-label="Notifications Alt+T"
+      aria-live="polite"
+      aria-relevant="additions text"
+      class="Toastify"
+    />
+  </div>
+</body>
+`;
