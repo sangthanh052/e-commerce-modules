@@ -3,6 +3,7 @@ import { useState } from 'react'
 import InputNumber from '../InputNumber'
 import type { InputNumberPropsType } from '../InputNumber/InputNumber'
 
+
 interface PropsType extends InputNumberPropsType {
   max?: number
   onIncrease?: (value: number) => void

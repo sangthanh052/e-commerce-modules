@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes'
 import { useContext, useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 
+import ErrorBoundary from './components/ErrorBoundary'
 import { AppContext } from './contexts/app.context'
 import useRouteElements from './useRouteElements'
 import { LocalStorageEventTarget } from './utils/auths'
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <ThemeProvider attribute={'class'} defaultTheme='light'>
-        {routeElements}
+        <ErrorBoundary>{routeElements}</ErrorBoundary>
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
       <ToastContainer />

@@ -80,13 +80,13 @@ export default function useRouteElements() {
               )
             }
           ]
-        }
+        },
       ]
     },
-    {
-      path: '*',
-      element: <NotFound />
-    }
+     {
+          path: '*',
+          element: <NotFound />
+        }
   ])
   return routeElements
 }
